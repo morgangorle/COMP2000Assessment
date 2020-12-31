@@ -15,6 +15,7 @@ public class MainGUI extends JFrame {
 
         MainGUI page = new MainGUI();
         page.setVisible(true);
+        User testUser;
 
 
 
