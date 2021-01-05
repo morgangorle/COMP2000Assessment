@@ -1,4 +1,4 @@
 import javax.swing.*;
 import java.awt.*;
-public class RecieptForm {
+public class RecieptForm extends JFrame {
 }

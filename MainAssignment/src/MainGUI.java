@@ -6,6 +6,9 @@ import java.io.IOException;
 
 public class MainGUI extends JFrame {
     private JPanel MainPanel;
+    private JButton adminButton;
+    private JButton scanButton;
+    private JTextArea scanCodeArea;
 
     public MainGUI(){
         setContentPane(MainPanel);
