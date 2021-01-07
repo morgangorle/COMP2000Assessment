@@ -18,10 +18,13 @@ public class MainGUI extends JFrame {
 
     }
     public static void main(String[] args){
+        FormManager.getInstance();
+
         String filePath = "resources\\Users.csv";
 
         MainGUI page = new MainGUI();
         page.setVisible(true);
+        FormManager.getInstance().setInitialForm(page);
 
 
         try{
