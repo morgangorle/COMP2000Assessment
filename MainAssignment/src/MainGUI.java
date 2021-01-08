@@ -25,6 +25,8 @@ public class MainGUI extends JFrame {
         MainGUI page = new MainGUI();
         page.setVisible(true);
         FormManager.getInstance().setInitialForm(page);
+        adminAreaButtonListener buttonListener = new adminAreaButtonListener();
+        page.adminButton.addActionListener(buttonListener);
 
 
         try{
