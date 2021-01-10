@@ -14,4 +14,16 @@ public class User {
         isAdmin = inputisAdmin;
 
     }
+    public String getUsername(){
+        return Username;
+
+    }
+    public String getPassword(){
+        return Password;
+
+    }
+    public Boolean getIsAdmin(){
+        return isAdmin;
+
+    }
 }
