@@ -13,6 +13,8 @@ public class AdminGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setPreferredSize(new Dimension(500,500));
         pack();
+        loginButtonListener loginListener = new loginButtonListener();
+        loginButton.addActionListener(loginListener);
 
     }
     public JTextField getusernameField(){
