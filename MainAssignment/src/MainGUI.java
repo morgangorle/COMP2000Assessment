@@ -27,28 +27,29 @@ public class MainGUI extends JFrame {
         FormManager.getInstance().setInitialForm(page);
         adminAreaButtonListener buttonListener = new adminAreaButtonListener();
         page.adminButton.addActionListener(buttonListener);
-        User[] users = new User[25];
+        System.out.println(FormManager.getInstance().getUsers()[5].getUsername() + "was added");
+//        User[] users = new User[25];
 
 
-        try{
-            String line = "";
-            String splitBy = ",";
-            int userNum = 0;
-            BufferedReader br = new BufferedReader(new FileReader(filePath));
-            while ((line = br.readLine()) != null)   //returns a Boolean value
-            {
-                String[] entry = line.split(splitBy);    // use comma as separator
-
-                User testUser = new User(entry[0],entry[1]);
-                users[userNum] = testUser;
-                userNum ++;
-            }
-            System.out.println("User " + users[6].getUsername() + " was added");
-        }
-        catch (IOException error){
-            System.out.println("An error occurred");
-
-        }
+//        try{
+//            String line = "";
+//            String splitBy = ",";
+//            int userNum = 0;
+//            BufferedReader br = new BufferedReader(new FileReader(filePath));
+//            while ((line = br.readLine()) != null)   //returns a Boolean value
+//            {
+//                String[] entry = line.split(splitBy);    // use comma as separator
+//
+ //               User testUser = new User(entry[0],entry[1]);
+//                users[userNum] = testUser;
+//                userNum ++;
+//            }
+//            System.out.println("User " + users[6].getUsername() + " was added");
+//        }
+//        catch (IOException error){
+//            System.out.println("An error occurred");
+//
+        //}
 
 
 

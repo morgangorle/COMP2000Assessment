@@ -2,8 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class AdminGUI extends JFrame {
-    private JTextField textField1;
-    private JTextField textField2;
+    private JTextField usernameField;
+    private JTextField passwordField;
     private JLabel nameLabel;
     private JLabel passwordLabel;
     private JButton loginButton;
@@ -14,5 +14,11 @@ public class AdminGUI extends JFrame {
         setPreferredSize(new Dimension(500,500));
         pack();
 
+    }
+    public JTextField getusernameField(){
+        return  usernameField;
+    }
+    public  JTextField getPasswordField(){
+        return passwordField;
     }
 }
