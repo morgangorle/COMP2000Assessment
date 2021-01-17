@@ -12,7 +12,7 @@ public class FormManager {
 
     private static FormManager Instance;
     private MainGUI InitialForm;
-    private AdminGUI AdminForm;
+    private LoginGUI AdminForm;
     private User[] users;
 
     private FormManager(){
@@ -57,10 +57,10 @@ public class FormManager {
     public void setInitialForm(MainGUI newForm){
         InitialForm = newForm;
     }
-    public void setAdminForm(AdminGUI newForm){
+    public void setAdminForm(LoginGUI newForm){
         AdminForm = newForm;
     }
-    public AdminGUI getAdminForm(){
+    public LoginGUI getAdminForm(){
         return AdminForm;
     }
     public MainGUI getInitialForm(){
