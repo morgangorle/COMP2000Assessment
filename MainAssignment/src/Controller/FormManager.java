@@ -38,9 +38,13 @@ public class FormManager {
                 BufferedReader br = new BufferedReader(new FileReader(filePath));
                 while ((line = br.readLine()) != null)   //returns a Boolean value
                 {
-                    String[] entry = line.split(splitBy);    // use comma as separator
+                    String[] entry = line.split(splitBy);// use comma as separator
+                    boolean inputBool = false;
+                    if(entry[2] == "true"){
+                        inputBool = true;
+                    }
 
-                    User testUser = new User(entry[0],entry[1]);
+                    User testUser = new User(entry[0],entry[1],inputBool);
                     users[userNum] = testUser;
                     userNum ++;
                 }
