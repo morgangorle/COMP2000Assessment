@@ -14,6 +14,7 @@ public class FormManager {
     private MainGUI InitialForm;
     private LoginGUI AdminForm;
     private User[] users;
+    private Item[] items;
 
     private FormManager(){
 
@@ -44,11 +45,11 @@ public class FormManager {
                         inputBool = true;
                     }
 
-                    User testUser = new User(entry[0],entry[1],inputBool);
-                    users[userNum] = testUser;
+                    User newUser = new User(entry[0],entry[1],inputBool);
+                    users[userNum] = newUser;
                     userNum ++;
                 }
-                System.out.println("Model.User " + users[6].getUsername() + " was added");
+                //System.out.println("Model.User " + users[6].getUsername() + " was added");
             }
             catch (IOException error){
                 System.out.println("An error occurred");
@@ -57,6 +58,34 @@ public class FormManager {
 
         }
         return users;
+    }
+    public Item[] getItems(){
+        String filePath = "resources\\Stock.csv";
+        if(items == null){
+            try{
+                items = new Item[10];
+                String line = "";
+                String splitBy = ",";
+                int itemNum = 0;
+                BufferedReader br = new BufferedReader(new FileReader(filePath));
+                while ((line = br.readLine()) != null)   //returns a Boolean value
+                {
+                    String[] entry = line.split(splitBy);// use comma as separator
+
+
+                    Item newItem = new Item(entry[0],entry[1],Float.parseFloat(entry[2]),Integer.parseInt(entry[3]));
+                    items[itemNum] = newItem;
+                    itemNum ++;
+                }
+                //System.out.println("Model.User " + users[6].getUsername() + " was added");
+            }
+            catch (IOException error){
+                System.out.println("An error occurred");
+
+            }
+
+        }
+        return null;
     }
     public void setInitialForm(MainGUI newForm){
         InitialForm = newForm;
