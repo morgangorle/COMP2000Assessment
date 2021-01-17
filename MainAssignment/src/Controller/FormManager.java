@@ -1,3 +1,8 @@
+package Controller;
+
+import View.*;
+import Model.*;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -39,7 +44,7 @@ public class FormManager {
                     users[userNum] = testUser;
                     userNum ++;
                 }
-                System.out.println("User " + users[6].getUsername() + " was added");
+                System.out.println("Model.User " + users[6].getUsername() + " was added");
             }
             catch (IOException error){
                 System.out.println("An error occurred");

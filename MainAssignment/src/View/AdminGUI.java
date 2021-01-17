@@ -1,5 +1,8 @@
+package View;
+
 import javax.swing.*;
 import java.awt.*;
+import Controller.*;
 
 public class AdminGUI extends JFrame {
     private JTextField usernameField;

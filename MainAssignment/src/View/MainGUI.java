@@ -1,8 +1,8 @@
+package View;
+
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import Controller.*;
 
 public class MainGUI extends JFrame {
     private JPanel MainPanel;
@@ -28,7 +28,7 @@ public class MainGUI extends JFrame {
         adminAreaButtonListener buttonListener = new adminAreaButtonListener();
         page.adminButton.addActionListener(buttonListener);
         System.out.println(FormManager.getInstance().getUsers()[5].getUsername() + "was added");
-//        User[] users = new User[25];
+//        Model.User[] users = new Model.User[25];
 
 
 //        try{
@@ -40,11 +40,11 @@ public class MainGUI extends JFrame {
 //            {
 //                String[] entry = line.split(splitBy);    // use comma as separator
 //
- //               User testUser = new User(entry[0],entry[1]);
+ //               Model.User testUser = new Model.User(entry[0],entry[1]);
 //                users[userNum] = testUser;
 //                userNum ++;
 //            }
-//            System.out.println("User " + users[6].getUsername() + " was added");
+//            System.out.println("Model.User " + users[6].getUsername() + " was added");
 //        }
 //        catch (IOException error){
 //            System.out.println("An error occurred");

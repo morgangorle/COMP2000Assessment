@@ -1,3 +1,7 @@
+package Controller;
+
+import View.AdminGUI;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
