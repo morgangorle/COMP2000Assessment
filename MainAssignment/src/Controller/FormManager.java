@@ -85,7 +85,7 @@ public class FormManager {
             }
 
         }
-        return null;
+        return items;
     }
     public void setInitialForm(MainGUI newForm){
         InitialForm = newForm;
