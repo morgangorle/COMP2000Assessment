@@ -12,7 +12,8 @@ public class FormManager {
 
     private static FormManager Instance;
     private MainGUI InitialForm;
-    private LoginGUI AdminForm;
+    private LoginGUI LoginForm;
+    private AdminGUI AdminForm;
     private User[] users;
     private Item[] items;
 
@@ -90,13 +91,19 @@ public class FormManager {
     public void setInitialForm(MainGUI newForm){
         InitialForm = newForm;
     }
-    public void setAdminForm(LoginGUI newForm){
+    public void setLoginForm(LoginGUI newForm){
+        LoginForm = newForm;
+    }
+    public void setAdminForm(AdminGUI newForm){
         AdminForm = newForm;
     }
-    public LoginGUI getAdminForm(){
-        return AdminForm;
+    public LoginGUI getLoginForm(){
+        return LoginForm;
     }
     public MainGUI getInitialForm(){
         return InitialForm;
+    }
+    public AdminGUI getAdminForm(){
+        return AdminForm;
     }
 }

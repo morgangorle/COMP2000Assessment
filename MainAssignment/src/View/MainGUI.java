@@ -8,7 +8,8 @@ public class MainGUI extends JFrame {
     private JPanel MainPanel;
     private JButton adminButton;
     private JButton scanButton;
-    private JTextArea scanCodeArea;
+    private JTextField CodeField;
+    private JTextArea ItemsArea;
 
     public MainGUI(){
         setContentPane(MainPanel);

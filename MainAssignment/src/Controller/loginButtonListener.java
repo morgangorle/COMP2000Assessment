@@ -1,13 +1,15 @@
 package Controller;
 
+import View.AdminGUI;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class loginButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-        String inputUsername = FormManager.getInstance().getAdminForm().getusernameField().getText();
-        String inputPassword = FormManager.getInstance().getAdminForm().getPasswordField().getText();
+        String inputUsername = FormManager.getInstance().getLoginForm().getusernameField().getText();
+        String inputPassword = FormManager.getInstance().getLoginForm().getPasswordField().getText();
         boolean canLogin = false;
         System.out.println("Input username:" + inputUsername);
         System.out.println("Input password:" + inputPassword);
@@ -20,10 +22,13 @@ public class loginButtonListener implements ActionListener {
             }
         }
         if(canLogin){
-            System.out.println("Model.User can login");
+            AdminGUI nextView = new AdminGUI();
+            FormManager.getInstance().setAdminForm(nextView);
+            nextView.setVisible(true);
 
         }
         else{
+            //Need to output an error to the GUI
             System.out.println("Model.User input incorrect details");
 
         }
