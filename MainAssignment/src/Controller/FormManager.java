@@ -72,9 +72,10 @@ public class FormManager {
                 while ((line = br.readLine()) != null)   //returns a Boolean value
                 {
                     String[] entry = line.split(splitBy);// use comma as separator
+                    float Price = Float.parseFloat(entry[2].replace("£",""));
 
 
-                    Item newItem = new Item(entry[0],entry[1],Float.parseFloat(entry[2]),Integer.parseInt(entry[3]));
+                    Item newItem = new Item(entry[0],entry[1],Price,Integer.parseInt(entry[3]));
                     items[itemNum] = newItem;
                     itemNum ++;
                 }
