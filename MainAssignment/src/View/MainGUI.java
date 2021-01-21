@@ -23,7 +23,15 @@ public class MainGUI extends JFrame {
         MainGUI page = new MainGUI();
         page.setVisible(true);
         FormManager.getInstance().setInitialForm(page);
-        adminAreaButtonListener buttonListener = new adminAreaButtonListener();
-        page.adminButton.addActionListener(buttonListener);
+        adminAreaButtonListener AdminListener = new adminAreaButtonListener();
+        ScanButtonListener ScanListener = new ScanButtonListener();
+        page.adminButton.addActionListener(AdminListener);
+        page.scanButton.addActionListener(ScanListener);
+    }
+    public JTextArea getItemsArea(){
+        return ItemsArea;
+    }
+    public JTextField getCodeField(){
+        return CodeField;
     }
 }

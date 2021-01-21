@@ -9,10 +9,9 @@ public class adminAreaButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         FormManager.getInstance().getInitialForm().setVisible(false);
-        LoginGUI NewAdminGUI = new LoginGUI();
-        FormManager.getInstance().setLoginForm(NewAdminGUI);
-        NewAdminGUI.setVisible(true);
-        FormManager.getInstance().getLoginForm().setVisible(false);
+        LoginGUI NewLoginGUI = new LoginGUI();
+        FormManager.getInstance().setLoginForm(NewLoginGUI);
+        NewLoginGUI.setVisible(true);
 
     }
 }

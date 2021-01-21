@@ -20,7 +20,9 @@ public class LoginGUI extends JFrame {
         setPreferredSize(new Dimension(500,500));
         pack();
         loginButtonListener loginListener = new loginButtonListener();
+        BackButtonListener BackListener = new BackButtonListener();
         loginButton.addActionListener(loginListener);
+        backButton.addActionListener(BackListener);
 
     }
     public JTextField getusernameField(){
