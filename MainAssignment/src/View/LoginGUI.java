@@ -11,6 +11,9 @@ public class LoginGUI extends JFrame {
     private JLabel passwordLabel;
     private JButton loginButton;
     private JPanel AdminPanel;
+    private JLabel errorMessage;
+    private JButton backButton;
+
     public LoginGUI(){
         setContentPane(AdminPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,5 +28,8 @@ public class LoginGUI extends JFrame {
     }
     public  JTextField getPasswordField(){
         return passwordField;
+    }
+    public void setErrorMessage(String inputMessage){
+        errorMessage.setText(inputMessage);
     }
 }

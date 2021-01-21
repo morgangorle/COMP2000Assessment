@@ -25,11 +25,12 @@ public class loginButtonListener implements ActionListener {
             AdminGUI nextView = new AdminGUI();
             FormManager.getInstance().setAdminForm(nextView);
             nextView.setVisible(true);
+            FormManager.getInstance().getLoginForm().setVisible(false);
 
         }
         else{
-            //Need to output an error to the GUI
-            System.out.println("Model.User input incorrect details");
+            //If no matches are found a message is displayed in the GUI
+            FormManager.getInstance().getLoginForm().setErrorMessage("Verification failed, please try again.");
 
         }
 
