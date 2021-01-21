@@ -1,6 +1,8 @@
 package Controller;
 
 import Model.*;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,6 +22,8 @@ public class ScanButtonListener implements ActionListener {
         }
         //Add to shop area
         if(validItem){
+
+            FormManager.getInstance().getInitialForm().getItemList().getModel();
             System.out.println("Valid item code");
         }
         else{

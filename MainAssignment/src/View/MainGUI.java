@@ -11,12 +11,17 @@ public class MainGUI extends JFrame {
     private JTextField CodeField;
     private JTextArea ItemsArea;
     private JButton checkoutButton;
+    private JList ItemList;
+    private DefaultListModel ListModel;
 
     public MainGUI(){
         setContentPane(MainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setPreferredSize(new Dimension(500,500));
         pack();
+        ListModel = new DefaultListModel();
+        ListModel.addElement("Item");
+        ItemList.setModel(ListModel);
 
     }
     public static void main(String[] args){
@@ -28,11 +33,11 @@ public class MainGUI extends JFrame {
         ScanButtonListener ScanListener = new ScanButtonListener();
         page.adminButton.addActionListener(AdminListener);
         page.scanButton.addActionListener(ScanListener);
-    }
-    public JTextArea getItemsArea(){
-        return ItemsArea;
+        page.getListModel().addElement("Item");
     }
     public JTextField getCodeField(){
         return CodeField;
     }
+    public JList getItemList(){ return ItemList;}
+    public DefaultListModel<String> getListModel(){return ListModel;}
 }
