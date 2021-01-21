@@ -10,6 +10,7 @@ public class MainGUI extends JFrame {
     private JButton scanButton;
     private JTextField CodeField;
     private JTextArea ItemsArea;
+    private JButton checkoutButton;
 
     public MainGUI(){
         setContentPane(MainPanel);
