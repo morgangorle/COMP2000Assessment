@@ -20,7 +20,7 @@ public class MainGUI extends JFrame {
         setPreferredSize(new Dimension(500,500));
         pack();
         ListModel = new DefaultListModel();
-        ListModel.addElement("Item");
+        //ListModel.addElement("Item");
         ItemList.setModel(ListModel);
 
     }
@@ -33,7 +33,7 @@ public class MainGUI extends JFrame {
         ScanButtonListener ScanListener = new ScanButtonListener();
         page.adminButton.addActionListener(AdminListener);
         page.scanButton.addActionListener(ScanListener);
-        page.getListModel().addElement("Item");
+        //page.getListModel().addElement("Item");
     }
     public JTextField getCodeField(){
         return CodeField;
