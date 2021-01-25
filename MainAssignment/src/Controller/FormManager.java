@@ -5,6 +5,7 @@ import Model.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 //This uses the singleton Pattern to help manage Forms
@@ -88,6 +89,39 @@ public class FormManager {
 
         }
         return items;
+    }
+    private void updateItemCSV(){
+        String filePath = "resources\\Stock.csv";
+        if(items != null){
+            try{
+                for (int i=0; i < items.length; i++){
+                    FileWriter itemWriter = new FileWriter(filePath);
+                    itemWriter.write(items[i].getName() + "," + items[i].getCode() + ",£" + items[i].getPrice() + "," + items[i].getAmountInStock());
+                    itemWriter.flush();
+                }
+
+            }
+            catch (IOException error){
+                System.out.println("An error occurred");
+
+            }
+
+
+        }
+    }
+    public void setItems(Item[] inputItems){
+        items = inputItems;
+        updateItemCSV();
+    }
+    public void addItem(Item inputItem){
+        Item[] newItems = new Item[items.length + 1];
+        for (int i = 0; i < items.length; i++){
+            newItems[i] = items[i];
+        }
+        newItems[items.length] = inputItem;
+        items = newItems;
+        updateItemCSV();
+
     }
     public void setInitialForm(MainGUI newForm){
         InitialForm = newForm;
