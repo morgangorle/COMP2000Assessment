@@ -6,9 +6,18 @@ import java.awt.*;
 public class AdminGUI extends JFrame {
     private JPanel mainPanel;
     private JTextArea restockArea;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
+    private JButton removeButton;
+    private JButton restockButton;
+    private JButton addButton;
+    private JButton editButton;
+    private JTextField nameTextField;
+    private JTextField codeTextField;
+    private JTextField price£TextField;
+    private JTextField stockTextField;
+    private JLabel NameLabel;
+    private JLabel codeLabel;
+    private JLabel priceLabel;
+    private JLabel stockLabel;
 
     public AdminGUI(){
         setContentPane(mainPanel);
