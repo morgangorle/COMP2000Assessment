@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 //This uses the singleton Pattern to help manage Forms
 public class FormManager {
@@ -15,8 +16,8 @@ public class FormManager {
     private MainGUI InitialForm;
     private LoginGUI LoginForm;
     private AdminGUI AdminForm;
-    private User[] users;
-    private Item[] items;
+    private ArrayList<Item> items;
+    private ArrayList<User> users;
 
     private FormManager(){
 
@@ -30,14 +31,14 @@ public class FormManager {
         return Instance;
 
     }
-    public User[] getUsers(){
+    public ArrayList<User> getUsers(){
         String filePath = "resources\\Users.csv";
         if(users == null){
             try{
-                users = new User[25];
+
+                users = new ArrayList<>();
                 String line = "";
                 String splitBy = ",";
-                int userNum = 0;
                 BufferedReader br = new BufferedReader(new FileReader(filePath));
                 while ((line = br.readLine()) != null)   //returns a Boolean value
                 {
@@ -48,8 +49,7 @@ public class FormManager {
                     }
 
                     User newUser = new User(entry[0],entry[1],inputBool);
-                    users[userNum] = newUser;
-                    userNum ++;
+                    users.add(newUser);
                 }
                 //System.out.println("Model.User " + users[6].getUsername() + " was added");
             }
@@ -61,14 +61,13 @@ public class FormManager {
         }
         return users;
     }
-    public Item[] getItems(){
+    public ArrayList<Item> getItems(){
         String filePath = "resources\\Stock.csv";
         if(items == null){
             try{
-                items = new Item[10];
+                items = new ArrayList<>();
                 String line = "";
                 String splitBy = ",";
-                int itemNum = 0;
                 BufferedReader br = new BufferedReader(new FileReader(filePath));
                 while ((line = br.readLine()) != null)   //returns a Boolean value
                 {
@@ -77,10 +76,8 @@ public class FormManager {
 
 
                     Item newItem = new Item(entry[0],entry[1],Price,Integer.parseInt(entry[3]));
-                    items[itemNum] = newItem;
-                    itemNum ++;
+                    items.add(newItem);
                 }
-                //System.out.println("Model.User " + users[6].getUsername() + " was added");
             }
             catch (IOException error){
                 System.out.println("An error occurred");
@@ -97,9 +94,10 @@ public class FormManager {
         if(items != null){
             try{
                 FileWriter itemWriter = new FileWriter(filePath);
-                for (int i=0; i < items.length; i++){
+                for (int i=0; i < items.size(); i++){
 
-                    itemWriter.append(items[i].getName() + "," + items[i].getCode() + ",£" + items[i].getPrice() + "," + items[i].getAmountInStock());
+
+                    itemWriter.append(items.get(i).getName() + "," + items.get(i).getCode() + ",£" + items.get(i).getPrice() + "," + items.get(i).getAmountInStock());
                     itemWriter.append('\n');
                 }
                 itemWriter.close();
@@ -113,16 +111,9 @@ public class FormManager {
 
         }
     }
-    public void setItems(Item[] inputItems){
-        items = inputItems;
-        updateItemCSV();
-    }
     public void addItem(Item inputItem){
-        FormManager.getInstance().getItems();
-        Item[] newItems = new Item[items.length + 1];
-        System.arraycopy(items, 0, newItems, 1, items.length);
-        newItems[0] = inputItem;
-        items = newItems;
+        getItems();
+        items.add(inputItem);
         updateItemCSV();
 
     }

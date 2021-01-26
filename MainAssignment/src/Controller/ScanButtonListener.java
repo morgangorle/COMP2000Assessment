@@ -5,16 +5,17 @@ import Model.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class ScanButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-        Item[] StoredItems = FormManager.getInstance().getItems();
+        ArrayList<Item> StoredItems = FormManager.getInstance().getItems();
         Item inputItem = null;
         Boolean validItem = false;
-        for (int i=0;i < StoredItems.length; i++){
-            if(FormManager.getInstance().getInitialForm().getCodeField().getText().equals(StoredItems[i].getCode())){
-                inputItem = new Item(StoredItems[i].getName(),StoredItems[i].getCode(),StoredItems[i].getPrice(),StoredItems[i].getAmountInStock());
+        for (int i=0;i < StoredItems.size(); i++){
+            if(FormManager.getInstance().getInitialForm().getCodeField().getText().equals(StoredItems.get(i).getCode())){
+                inputItem = new Item(StoredItems.get(i).getName(), StoredItems.get(i).getCode(), StoredItems.get(i).getPrice(), StoredItems.get(i).getAmountInStock());
 
                 validItem = true;
                 break;

@@ -13,10 +13,10 @@ public class loginButtonListener implements ActionListener {
         boolean canLogin = false;
         System.out.println("Input username:" + inputUsername);
         System.out.println("Input password:" + inputPassword);
-        for (int i = 0; i < FormManager.getInstance().getUsers().length; i++){
-            System.out.println("Looking at username:" + FormManager.getInstance().getUsers()[i].getUsername());
-            System.out.println("Looking at password:" + FormManager.getInstance().getUsers()[i].getPassword());
-            if(inputUsername.equals(FormManager.getInstance().getUsers()[i].getUsername()) && inputPassword.equals(FormManager.getInstance().getUsers()[i].getPassword())){
+        for (int i = 0; i < FormManager.getInstance().getUsers().size(); i++){
+            System.out.println("Looking at username:" + FormManager.getInstance().getUsers().get(i).getUsername());
+            System.out.println("Looking at password:" + FormManager.getInstance().getUsers().get(i).getPassword());
+            if(inputUsername.equals(FormManager.getInstance().getUsers().get(i).getUsername()) && inputPassword.equals(FormManager.getInstance().getUsers().get(i).getPassword())){
                 canLogin = true;
                 break;
             }
