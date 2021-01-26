@@ -11,12 +11,14 @@ public class ScanButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         ArrayList<Item> StoredItems = FormManager.getInstance().getItems();
-        Item inputItem = null;
+        //Item inputItem = null;
         Boolean validItem = false;
         for (int i=0;i < StoredItems.size(); i++){
             if(FormManager.getInstance().getInitialForm().getCodeField().getText().equals(StoredItems.get(i).getCode())){
-                inputItem = new Item(StoredItems.get(i).getName(), StoredItems.get(i).getCode(), StoredItems.get(i).getPrice(), StoredItems.get(i).getAmountInStock());
-
+                Item inputItem = new Item(StoredItems.get(i).getName(), StoredItems.get(i).getCode(), StoredItems.get(i).getPrice(), StoredItems.get(i).getAmountInStock());
+                FormManager.getInstance().getInitialForm().getListModel().addElement(inputItem.getName() + " £" +inputItem.getPrice());
+                FormManager.getInstance().getInitialForm().getBasket().add(inputItem);
+                System.out.println("Valid item code");
                 validItem = true;
                 break;
 
@@ -24,13 +26,10 @@ public class ScanButtonListener implements ActionListener {
 
         }
         //Add to shop area
-        if(validItem){
-
-            FormManager.getInstance().getInitialForm().getListModel().addElement(inputItem.getName() + " £" +inputItem.getPrice());
-            System.out.println("Valid item code");
-        }
-        else{
+        if(!validItem){
             System.out.println("No matches");
+
+
         }
 
 
