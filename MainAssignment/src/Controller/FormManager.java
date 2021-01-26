@@ -92,13 +92,17 @@ public class FormManager {
     }
     private void updateItemCSV(){
         String filePath = "resources\\Stock.csv";
+
+
         if(items != null){
             try{
+                FileWriter itemWriter = new FileWriter(filePath);
                 for (int i=0; i < items.length; i++){
-                    FileWriter itemWriter = new FileWriter(filePath);
-                    itemWriter.write(items[i].getName() + "," + items[i].getCode() + ",£" + items[i].getPrice() + "," + items[i].getAmountInStock());
-                    itemWriter.flush();
+
+                    itemWriter.append(items[i].getName() + "," + items[i].getCode() + ",£" + items[i].getPrice() + "," + items[i].getAmountInStock());
+                    itemWriter.append('\n');
                 }
+                itemWriter.close();
 
             }
             catch (IOException error){
@@ -114,11 +118,10 @@ public class FormManager {
         updateItemCSV();
     }
     public void addItem(Item inputItem){
+        FormManager.getInstance().getItems();
         Item[] newItems = new Item[items.length + 1];
-        for (int i = 0; i < items.length; i++){
-            newItems[i] = items[i];
-        }
-        newItems[items.length] = inputItem;
+        System.arraycopy(items, 0, newItems, 1, items.length);
+        newItems[0] = inputItem;
         items = newItems;
         updateItemCSV();
 

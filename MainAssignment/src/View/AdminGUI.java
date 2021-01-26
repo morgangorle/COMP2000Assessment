@@ -57,4 +57,7 @@ public class AdminGUI extends JFrame {
     public JTextField getStockTextField(){
         return stockTextField;
     }
+    public JLabel getStateLabel(){
+        return stateLabel;
+    }
 }
