@@ -111,11 +111,27 @@ public class FormManager {
 
         }
     }
-    public void addItem(Item inputItem){
+    public Boolean addItem(Item inputItem){
         getItems();
-        items.add(inputItem);
-        updateItemCSV();
+        if(getItemFromCode(inputItem.getCode()) != null){
+            items.add(inputItem);
+            updateItemCSV();
+            return true;
+        }
+        else {
+            return false;
+        }
 
+
+    }
+    public Item getItemFromCode(String inputCode){
+        for(int i=0;i < items.size(); i++){
+            if(items.get(i).getCode().equals(inputCode)){
+                return items.get(i);
+            }
+
+        }
+        return null;
     }
     public void setInitialForm(MainGUI newForm){
         InitialForm = newForm;

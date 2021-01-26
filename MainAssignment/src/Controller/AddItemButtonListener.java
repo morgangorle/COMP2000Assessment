@@ -11,14 +11,26 @@ public class AddItemButtonListener implements ActionListener {
         //try{
             if(!FormManager.getInstance().getAdminForm().getNameTextField().getText().equals("") && !FormManager.getInstance().getAdminForm().getCodeTextField().getText().equals("") && !FormManager.getInstance().getAdminForm().getPrice£TextField().getText().equals("") && !FormManager.getInstance().getAdminForm().getStockTextField().getText().equals("") ){
                 Item newItem = new Item(FormManager.getInstance().getAdminForm().getNameTextField().getText(),FormManager.getInstance().getAdminForm().getCodeTextField().getText(),Float.parseFloat(FormManager.getInstance().getAdminForm().getPrice£TextField().getText()),Integer.parseInt(FormManager.getInstance().getAdminForm().getStockTextField().getText()));
-                FormManager.getInstance().addItem(newItem);
-                FormManager.getInstance().getAdminForm().getStateLabel().setText("Item added");
+                if(FormManager.getInstance().addItem(newItem)){
+                    FormManager.getInstance().getAdminForm().getStateLabel().setText("Item added");
+                }
+                else{
+                    FormManager.getInstance().getAdminForm().getStateLabel().setText("Duplicate found");
+
+                }
+
+
 
             }
             else if(!FormManager.getInstance().getAdminForm().getNameTextField().getText().equals("") && !FormManager.getInstance().getAdminForm().getCodeTextField().getText().equals("")&& !FormManager.getInstance().getAdminForm().getPrice£TextField().getText().equals("")){
                 Item newItem = new Item(FormManager.getInstance().getAdminForm().getNameTextField().getText(),FormManager.getInstance().getAdminForm().getCodeTextField().getText(),Float.parseFloat(FormManager.getInstance().getAdminForm().getPrice£TextField().getText()));
-                FormManager.getInstance().addItem(newItem);
-                FormManager.getInstance().getAdminForm().getStateLabel().setText("Item added");
+                if(FormManager.getInstance().addItem(newItem)){
+                    FormManager.getInstance().getAdminForm().getStateLabel().setText("Item added");
+                }
+                else{
+                    FormManager.getInstance().getAdminForm().getStateLabel().setText("Duplicate found");
+
+                }
             }
             else{
                 //Let the user know that the textFields are empty
