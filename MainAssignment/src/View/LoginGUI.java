@@ -17,7 +17,7 @@ public class LoginGUI extends JFrame {
     public LoginGUI(){
         setContentPane(AdminPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(500,500));
+        setPreferredSize(new Dimension(1200,750));
         pack();
         loginButtonListener loginListener = new loginButtonListener();
         BackButtonListener BackListener = new BackButtonListener();

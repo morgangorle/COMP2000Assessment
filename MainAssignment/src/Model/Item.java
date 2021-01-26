@@ -11,6 +11,13 @@ public class Item {
         Price = inputPrice;
         AmountInStock = inputStock;
     }
+    public Item(String inputName, String inputCode,float inputPrice){
+        Name = inputName;
+        Code = inputCode;
+        Price = inputPrice;
+        AmountInStock = 0;
+
+    }
     public String getName(){
         return Name;
     }

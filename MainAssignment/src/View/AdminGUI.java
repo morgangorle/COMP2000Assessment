@@ -21,11 +21,12 @@ public class AdminGUI extends JFrame {
     private JLabel stockLabel;
     private JList stockList;
     private JLabel listLabel;
+    private JLabel stateLabel;
 
     public AdminGUI(){
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(500,500));
+        setPreferredSize(new Dimension(1200,750));
         AddItemButtonListener AddItemListener = new AddItemButtonListener();
         RestockItemButtonListener RestockItemListener = new RestockItemButtonListener();
         EditItemButtonListener EditItemListener = new EditItemButtonListener();
@@ -41,6 +42,7 @@ public class AdminGUI extends JFrame {
 
     }
     public void populateRestockArea(){
+
 
     }
     public JTextField getNameTextField(){
