@@ -3,6 +3,7 @@ package View;
 import javax.swing.*;
 import java.awt.*;
 import Controller.*;
+import Model.Item;
 
 public class MainGUI extends JFrame {
     private JPanel MainPanel;
@@ -12,12 +13,15 @@ public class MainGUI extends JFrame {
     private JTextArea ItemsArea;
     private JButton checkoutButton;
     private JList ItemList;
+    private JButton removeButton;
+    private JLabel stateLabel;
     private DefaultListModel ListModel;
+    private Item[] Basket;
 
     public MainGUI(){
         setContentPane(MainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(500,500));
+        setPreferredSize(new Dimension(1200,750));
         pack();
         ListModel = new DefaultListModel();
         //ListModel.addElement("Item");
@@ -40,4 +44,10 @@ public class MainGUI extends JFrame {
     }
     public JList getItemList(){ return ItemList;}
     public DefaultListModel<String> getListModel(){return ListModel;}
+    public Item[] getBasket(){
+        return Basket;
+    }
+    public void addToBasket(Item newItem){
+
+    }
 }
