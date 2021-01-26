@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class AddItemButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-        //try{
+        try{
             if(!FormManager.getInstance().getAdminForm().getNameTextField().getText().equals("") && !FormManager.getInstance().getAdminForm().getCodeTextField().getText().equals("") && !FormManager.getInstance().getAdminForm().getPrice£TextField().getText().equals("") && !FormManager.getInstance().getAdminForm().getStockTextField().getText().equals("") ){
                 Item newItem = new Item(FormManager.getInstance().getAdminForm().getNameTextField().getText(),FormManager.getInstance().getAdminForm().getCodeTextField().getText(),Float.parseFloat(FormManager.getInstance().getAdminForm().getPrice£TextField().getText()),Integer.parseInt(FormManager.getInstance().getAdminForm().getStockTextField().getText()));
                 if(FormManager.getInstance().addItem(newItem)){
@@ -38,13 +38,13 @@ public class AddItemButtonListener implements ActionListener {
 
             }
 
-        //}
-        //catch (Exception error){
+        }
+        catch (Exception error){
             //Let the user know that an error occurred
-       //     FormManager.getInstance().getAdminForm().getStateLabel().setText("An error occurred");
+            FormManager.getInstance().getAdminForm().getStateLabel().setText("An error occurred");
 
 
-        //}
+        }
 
     }
 }
