@@ -10,7 +10,7 @@ public class EditItemButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Boolean changesMade = false;
         if(FormManager.getInstance().getAdminForm().getStockList().getSelectedIndex() != -1){
-            Item itemtoChange = FormManager.getInstance().getItemFromCode(FormManager.getInstance().getAdminForm().getRestockList().get(FormManager.getInstance().getAdminForm().getStockList().getSelectedIndex()).getCode());
+            Item itemtoChange = FormManager.getInstance().getAdminForm().getRestockList().get(FormManager.getInstance().getAdminForm().getStockList().getSelectedIndex());
 
             if(FormManager.getInstance().getItemFromCode(FormManager.getInstance().getAdminForm().getCodeTextField().getText()) == null){
                 if(!FormManager.getInstance().getAdminForm().getCodeTextField().getText().equals("")){
