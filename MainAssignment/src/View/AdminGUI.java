@@ -1,9 +1,11 @@
 package View;
 
 import Controller.*;
+import Model.Item;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class AdminGUI extends JFrame {
     private JPanel mainPanel;
@@ -22,6 +24,7 @@ public class AdminGUI extends JFrame {
     private JList stockList;
     private JLabel listLabel;
     private JLabel stateLabel;
+    private ArrayList<Item> restockList;
 
     public AdminGUI(){
         setContentPane(mainPanel);
@@ -56,6 +59,9 @@ public class AdminGUI extends JFrame {
     }
     public JTextField getStockTextField(){
         return stockTextField;
+    }
+    public ArrayList<Item> getRestockList(){
+        return restockList;
     }
     public JLabel getStateLabel(){
         return stateLabel;

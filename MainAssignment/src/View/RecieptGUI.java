@@ -5,6 +5,10 @@ import java.awt.*;
 public class RecieptGUI extends JFrame {
     private JTextArea ItemsArea;
     private JPanel mainPanel;
+    private JLabel totalLabel;
+    private JLabel CashPaidLabel;
+    private JLabel ChangeLabel;
+
     public RecieptGUI(){
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
