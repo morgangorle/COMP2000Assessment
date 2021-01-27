@@ -18,10 +18,16 @@ public class MainGUI extends JFrame {
     private JButton removeButton;
     private JLabel instructionLabel;
     private JLabel stateLabel;
+    private JRadioButton cashButton;
+    private JRadioButton cardButton;
+    private JLabel paymentLabel;
+    private JLabel totalLabel;
     private DefaultListModel BasketModel;
     private ArrayList<Item> Basket;
+    private Float Total;
 
     public MainGUI(){
+        Total = 0f;
         Basket = new ArrayList<>();
         setContentPane(MainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,5 +60,21 @@ public class MainGUI extends JFrame {
     }
     public JLabel getStateLabel(){
         return stateLabel;
+    }
+    public JRadioButton getCashButton(){
+        return cashButton;
+    }
+    public JRadioButton getCardButton(){
+        return cardButton;
+    }
+
+    public Float getTotal() {
+        return Total;
+    }
+
+    public void setTotal(Float total) {
+        Total = total;
+
+        totalLabel.setText("£" + String.format("%.2f",Total));
     }
 }

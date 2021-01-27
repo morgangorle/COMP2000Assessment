@@ -13,6 +13,7 @@ public class RemoveItemButtonListener implements ActionListener {
         if(FormManager.getInstance().getAdminForm().getStockList().getSelectedIndex() != -1){
             itemToChange = FormManager.getInstance().getAdminForm().getRestockList().get(FormManager.getInstance().getAdminForm().getStockList().getSelectedIndex());
             FormManager.getInstance().getItems().remove(itemToChange);
+
             changesMade = true;
             FormManager.getInstance().getAdminForm().getStateLabel().setText("Item successfully deleted");
 
