@@ -87,7 +87,7 @@ public class FormManager {
         }
         return items;
     }
-    private void updateItemCSV(){
+    public void updateItemCSV(){
         String filePath = "resources\\Stock.csv";
 
 

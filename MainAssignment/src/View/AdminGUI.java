@@ -51,6 +51,7 @@ public class AdminGUI extends JFrame {
 
     }
     public void populateRestockArea(){
+        restockModel.removeAllElements();
         restockList = FormManager.getInstance().getItems();
         Collections.sort(restockList, Comparator.comparing(Item::getAmountInStock));
         for(int i=0;i < restockList.size(); i++){
