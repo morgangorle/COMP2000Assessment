@@ -18,16 +18,15 @@ public class ScanButtonListener implements ActionListener {
                 Item inputItem = new Item(StoredItems.get(i).getName(), StoredItems.get(i).getCode(), StoredItems.get(i).getPrice(), StoredItems.get(i).getAmountInStock());
                 FormManager.getInstance().getInitialForm().getListModel().addElement(inputItem.getName() + " £" +inputItem.getPrice());
                 FormManager.getInstance().getInitialForm().getBasket().add(inputItem);
-                System.out.println("Valid item code");
+                FormManager.getInstance().getInitialForm().getStateLabel().setText("Item successfully added");
                 validItem = true;
                 break;
 
             }
 
         }
-        //Add to shop area
         if(!validItem){
-            System.out.println("No matches");
+            FormManager.getInstance().getInitialForm().getStateLabel().setText("Invalid item code");
 
 
         }

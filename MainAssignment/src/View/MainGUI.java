@@ -16,6 +16,7 @@ public class MainGUI extends JFrame {
     private JButton checkoutButton;
     private JList ItemList;
     private JButton removeButton;
+    private JLabel instructionLabel;
     private JLabel stateLabel;
     private DefaultListModel BasketModel;
     private ArrayList<Item> Basket;
@@ -31,6 +32,8 @@ public class MainGUI extends JFrame {
         ItemList.setModel(BasketModel);
         adminAreaButtonListener AdminListener = new adminAreaButtonListener();
         ScanButtonListener ScanListener = new ScanButtonListener();
+        RemoveFromBasketButtonListener RemoveListener = new RemoveFromBasketButtonListener();
+        removeButton.addActionListener(RemoveListener);
         adminButton.addActionListener(AdminListener);
         scanButton.addActionListener(ScanListener);
 
@@ -49,7 +52,7 @@ public class MainGUI extends JFrame {
     public ArrayList<Item> getBasket(){
         return Basket;
     }
-    public void addToBasket(Item newItem){
-
+    public JLabel getStateLabel(){
+        return stateLabel;
     }
 }

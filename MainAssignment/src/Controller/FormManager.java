@@ -72,7 +72,6 @@ public class FormManager {
                 while ((line = br.readLine()) != null)   //returns a Boolean value
                 {
                     String[] entry = line.split(splitBy);// use comma as separator
-                    System.out.println(line);
                     float Price = Float.parseFloat(entry[2].replace("£",""));
 
 

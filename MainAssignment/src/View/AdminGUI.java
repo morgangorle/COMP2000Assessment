@@ -76,6 +76,12 @@ public class AdminGUI extends JFrame {
     public ArrayList<Item> getRestockList(){
         return restockList;
     }
+    public DefaultListModel getRestockModel(){
+        return restockModel;
+    }
+    public JList getStockList(){
+        return stockList;
+    }
     public JLabel getStateLabel(){
         return stateLabel;
     }
