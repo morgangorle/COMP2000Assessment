@@ -44,7 +44,7 @@ public class AdminGUI extends JFrame {
         restockModel = new DefaultListModel();
         stockList.setModel(restockModel);
         pack();
-        //populateRestockArea();
+        populateRestockArea();
 
 
 
@@ -52,10 +52,9 @@ public class AdminGUI extends JFrame {
     }
     public void populateRestockArea(){
         restockList = FormManager.getInstance().getItems();
-        Collections.sort(restockList, Comparator.comparing(Item::getCode));
+        Collections.sort(restockList, Comparator.comparing(Item::getAmountInStock));
         for(int i=0;i < restockList.size(); i++){
             restockModel.addElement(restockList.get(i).getName() + " Code:" + restockList.get(i).getCode() +  " £" + restockList.get(i).getPrice() + " " + restockList.get(i).getAmountInStock() + " in stock");
-            ;
         }
 
 
