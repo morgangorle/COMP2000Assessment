@@ -1,6 +1,6 @@
 package Model;
 
-public class Item {
+public class Item extends ModelItem {
     private String Name;
     private String Code;
     private float Price;

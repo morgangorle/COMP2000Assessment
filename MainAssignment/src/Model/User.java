@@ -1,6 +1,6 @@
 package Model;
 
-public class User {
+public class User extends ModelItem {
     private String Username;
     private String Password;
     private Boolean isAdmin;
