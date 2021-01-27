@@ -6,6 +6,8 @@ import Model.Item;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class AdminGUI extends JFrame {
     private JPanel mainPanel;
@@ -24,6 +26,7 @@ public class AdminGUI extends JFrame {
     private JList stockList;
     private JLabel listLabel;
     private JLabel stateLabel;
+    private DefaultListModel restockModel;
     private ArrayList<Item> restockList;
 
     public AdminGUI(){
@@ -38,13 +41,23 @@ public class AdminGUI extends JFrame {
         restockButton.addActionListener(RestockItemListener);
         editButton.addActionListener(EditItemListener);
         removeButton.addActionListener(RemoveItemListener);
+        restockModel = new DefaultListModel();
+        stockList.setModel(restockModel);
         pack();
+        //populateRestockArea();
 
 
 
 
     }
     public void populateRestockArea(){
+        restockList = FormManager.getInstance().getItems();
+        Collections.sort(restockList, Comparator.comparing(Item::getCode));
+        for(int i=0;i < restockList.size(); i++){
+            restockModel.addElement(restockList.get(i).getName() + " Code:" + restockList.get(i).getCode() +  " £" + restockList.get(i).getPrice() + " " + restockList.get(i).getAmountInStock() + " in stock");
+            ;
+        }
+
 
 
     }
