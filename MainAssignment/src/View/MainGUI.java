@@ -58,6 +58,17 @@ public class MainGUI extends JFrame {
     public ArrayList<Item> getBasket(){
         return Basket;
     }
+    public int getNumofObjectinBasket(String inputCode){
+        int amountFound = 0;
+        for(int i = 0; i < Basket.size(); i++){
+            if(Basket.get(i).getCode().equals(inputCode)){
+                amountFound ++;
+            }
+
+        }
+
+        return amountFound;
+    }
     public JLabel getStateLabel(){
         return stateLabel;
     }
