@@ -24,76 +24,12 @@
           <text value="Remaining:"/>
         </properties>
       </component>
-      <component id="a2596" class="javax.swing.JButton" binding="add10PoundButton">
-        <constraints>
-          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Add £10"/>
-        </properties>
-      </component>
-      <component id="550ef" class="javax.swing.JButton" binding="add1PoundButton">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Add £1"/>
-        </properties>
-      </component>
       <component id="40e3f" class="javax.swing.JButton" binding="purchaseButton">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Proceed with Purchase"/>
-        </properties>
-      </component>
-      <component id="835e0" class="javax.swing.JButton" binding="add5PoundButton">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Add £5"/>
-        </properties>
-      </component>
-      <component id="a061b" class="javax.swing.JButton" binding="add2PoundButton">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Add £2"/>
-        </properties>
-      </component>
-      <component id="836" class="javax.swing.JButton" binding="add50pButton">
-        <constraints>
-          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Add 50p"/>
-        </properties>
-      </component>
-      <component id="2659a" class="javax.swing.JButton" binding="add20pButton">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Add 20p"/>
-        </properties>
-      </component>
-      <component id="cbe55" class="javax.swing.JButton" binding="add10pButton">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Add 10p"/>
-        </properties>
-      </component>
-      <component id="53383" class="javax.swing.JButton" binding="add5pButton">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Add 5p"/>
         </properties>
       </component>
       <component id="4052c" class="javax.swing.JLabel" binding="stateLabel">
@@ -112,6 +48,90 @@
           <text value="Back"/>
         </properties>
       </component>
+      <component id="5104" class="javax.swing.JRadioButton" binding="a5pRadioButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="5p"/>
+        </properties>
+      </component>
+      <component id="a583d" class="javax.swing.JRadioButton" binding="£1RadioButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="£1"/>
+        </properties>
+      </component>
+      <component id="28001" class="javax.swing.JRadioButton" binding="a10pRadioButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="10p"/>
+        </properties>
+      </component>
+      <component id="b58f7" class="javax.swing.JRadioButton" binding="£2RadioButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="£2"/>
+        </properties>
+      </component>
+      <component id="4d477" class="javax.swing.JRadioButton" binding="a20pRadioButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="20p"/>
+        </properties>
+      </component>
+      <component id="a7716" class="javax.swing.JRadioButton" binding="£5RadioButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="£5"/>
+        </properties>
+      </component>
+      <component id="94e23" class="javax.swing.JRadioButton" binding="a50pRadioButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="50p"/>
+        </properties>
+      </component>
+      <component id="7304f" class="javax.swing.JRadioButton" binding="£10RadioButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="£10"/>
+        </properties>
+      </component>
+      <component id="eef73" class="javax.swing.JButton" binding="addCoinButton">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Add Coin"/>
+        </properties>
+      </component>
     </children>
   </grid>
+  <buttonGroups>
+    <group name="Coins">
+      <member id="5104"/>
+      <member id="28001"/>
+      <member id="4d477"/>
+      <member id="94e23"/>
+      <member id="a583d"/>
+      <member id="b58f7"/>
+      <member id="a7716"/>
+      <member id="7304f"/>
+    </group>
+  </buttonGroups>
 </form>

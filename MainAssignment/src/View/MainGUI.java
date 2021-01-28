@@ -39,6 +39,8 @@ public class MainGUI extends JFrame {
         adminAreaButtonListener AdminListener = new adminAreaButtonListener();
         ScanButtonListener ScanListener = new ScanButtonListener();
         RemoveFromBasketButtonListener RemoveListener = new RemoveFromBasketButtonListener();
+        checkoutButtonListener CheckoutListener = new checkoutButtonListener();
+        checkoutButton.addActionListener(CheckoutListener);
         removeButton.addActionListener(RemoveListener);
         adminButton.addActionListener(AdminListener);
         scanButton.addActionListener(ScanListener);

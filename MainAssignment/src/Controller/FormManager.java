@@ -16,6 +16,8 @@ public class FormManager {
     private MainGUI InitialForm;
     private LoginGUI LoginForm;
     private AdminGUI AdminForm;
+    private CashGUI CashForm;
+    private CardGUI CardForm;
     private ArrayList<Item> items;
     private ArrayList<User> users;
 
@@ -142,6 +144,12 @@ public class FormManager {
     public void setAdminForm(AdminGUI newForm){
         AdminForm = newForm;
     }
+    public void setCardForm(CardGUI cardForm) {
+        CardForm = cardForm;
+    }
+    public void setCashForm(CashGUI cashForm) {
+        CashForm = cashForm;
+    }
     public LoginGUI getLoginForm(){
         return LoginForm;
     }
@@ -150,5 +158,11 @@ public class FormManager {
     }
     public AdminGUI getAdminForm(){
         return AdminForm;
+    }
+    public CardGUI getCardForm() {
+        return CardForm;
+    }
+    public CashGUI getCashForm() {
+        return CashForm;
     }
 }
