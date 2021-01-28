@@ -19,6 +19,7 @@ public class checkoutButtonListener implements ActionListener {
         else if(FormManager.getInstance().getInitialForm().getCashButton().isSelected()){
             CashGUI newGUI = new CashGUI();
             newGUI.setVisible(true);
+            newGUI.setTotal(FormManager.getInstance().getInitialForm().getTotal());
             FormManager.getInstance().getInitialForm().setVisible(false);
             FormManager.getInstance().setCashForm(newGUI);
 

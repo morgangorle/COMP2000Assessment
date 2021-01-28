@@ -22,6 +22,9 @@ public class CashGUI extends JFrame {
     private JRadioButton a50pRadioButton;
     private JRadioButton £10RadioButton;
     private JButton addCoinButton;
+    private float total ;
+    private float remainingDue;
+    private float amountPaid;
 
     public CashGUI(){
         setContentPane(mainPanel);
@@ -74,5 +77,38 @@ public class CashGUI extends JFrame {
 
         }
 
+    }
+
+    private float getRemainingDue() {
+        return remainingDue;
+    }
+
+    public float getTotal() {
+        return total;
+    }
+
+    public float getAmountPaid() {
+        return amountPaid;
+    }
+
+    public void setTotal(float inputTotal) {
+
+        total = inputTotal;
+        amountLabel.setText("Total: "+"£" + String.format("%.2f",total));
+        setRemainingDue(total - amountPaid);
+    }
+
+    private void setRemainingDue(float InputRemainingDue) {
+        remainingDue = InputRemainingDue;
+        remainingLabel.setText("Remaining: "+"£" + String.format("%.2f",remainingDue));
+    }
+
+    public void setAmountPaid(float InputAmountPaid) {
+        amountPaid = InputAmountPaid;
+        setRemainingDue(total - amountPaid);
+    }
+
+    public JLabel getStateLabel() {
+        return stateLabel;
     }
 }

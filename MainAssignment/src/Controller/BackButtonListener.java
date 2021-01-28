@@ -14,5 +14,11 @@ public class BackButtonListener implements ActionListener {
             FormManager.getInstance().getAdminForm().dispose();
         }
 
+        if(FormManager.getInstance().getCashForm() != null){
+            FormManager.getInstance().getCashForm().dispose();
+        }
+        if(FormManager.getInstance().getCardForm() != null){
+            FormManager.getInstance().getCardForm().dispose();
+        }
     }
 }

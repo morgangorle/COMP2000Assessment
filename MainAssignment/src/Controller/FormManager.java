@@ -18,6 +18,7 @@ public class FormManager {
     private AdminGUI AdminForm;
     private CashGUI CashForm;
     private CardGUI CardForm;
+    private RecieptGUI RecieptForm;
     private ArrayList<Item> items;
     private ArrayList<User> users;
 
@@ -150,6 +151,11 @@ public class FormManager {
     public void setCashForm(CashGUI cashForm) {
         CashForm = cashForm;
     }
+
+    public void setRecieptForm(RecieptGUI recieptForm) {
+        RecieptForm = recieptForm;
+    }
+
     public LoginGUI getLoginForm(){
         return LoginForm;
     }
@@ -164,5 +170,8 @@ public class FormManager {
     }
     public CashGUI getCashForm() {
         return CashForm;
+    }
+    public RecieptGUI getRecieptForm() {
+        return RecieptForm;
     }
 }

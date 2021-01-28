@@ -8,6 +8,8 @@ public class RecieptGUI extends JFrame {
     private JLabel totalLabel;
     private JLabel CashPaidLabel;
     private JLabel ChangeLabel;
+    private JList itemsList;
+    private JLabel itemsLabel;
 
     public RecieptGUI(){
         setContentPane(mainPanel);
@@ -15,5 +17,21 @@ public class RecieptGUI extends JFrame {
         setPreferredSize(new Dimension(1200,750));
         pack();
 
+    }
+
+    public JList getItemsList() {
+        return itemsList;
+    }
+
+    public JLabel getTotalLabel() {
+        return totalLabel;
+    }
+
+    public JLabel getCashPaidLabel() {
+        return CashPaidLabel;
+    }
+
+    public JLabel getChangeLabel() {
+        return ChangeLabel;
     }
 }
