@@ -174,4 +174,5 @@ public class FormManager {
     public RecieptGUI getRecieptForm() {
         return RecieptForm;
     }
+
 }

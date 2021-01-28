@@ -3,6 +3,7 @@ package Controller.BasketStates;
 import Controller.FormManager;
 
 public class BasketInCheckout implements IBasketState {
+    //If a checkout is in progress, changes to the basket are blocked.
 
     @Override
     public void addItem(BasketTurnStile inputTurnStile) {
