@@ -6,16 +6,8 @@ import java.awt.event.ActionListener;
 public class RemoveFromBasketButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(FormManager.getInstance().getInitialForm().getItemList().getSelectedIndex() != -1){
-            FormManager.getInstance().getInitialForm().setTotal(FormManager.getInstance().getInitialForm().getTotal() - FormManager.getInstance().getInitialForm().getBasket().get(FormManager.getInstance().getInitialForm().getItemList().getSelectedIndex()).getPrice());
-            FormManager.getInstance().getInitialForm().getBasket().remove(FormManager.getInstance().getInitialForm().getItemList().getSelectedIndex());
-            FormManager.getInstance().getInitialForm().getListModel().remove(FormManager.getInstance().getInitialForm().getItemList().getSelectedIndex());
-            FormManager.getInstance().getInitialForm().getStateLabel().setText("Item removed");
-        }
-        else {
-            FormManager.getInstance().getInitialForm().getStateLabel().setText("No item selected");
-
-        }
+        //This action is handled by the state machine.
+        FormManager.getInstance().getInitialForm().getBasketStateHandler().removeItem();
 
     }
 }

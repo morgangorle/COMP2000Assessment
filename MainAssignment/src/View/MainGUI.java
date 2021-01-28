@@ -5,6 +5,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import Controller.*;
+import Controller.BasketStates.BasketTurnStile;
 import Model.Item;
 
 public class MainGUI extends JFrame {
@@ -25,6 +26,7 @@ public class MainGUI extends JFrame {
     private DefaultListModel BasketModel;
     private ArrayList<Item> Basket;
     private Float Total;
+    private BasketTurnStile BasketStateHandler;
 
     public MainGUI(){
         Total = 0f;
@@ -44,6 +46,7 @@ public class MainGUI extends JFrame {
         removeButton.addActionListener(RemoveListener);
         adminButton.addActionListener(AdminListener);
         scanButton.addActionListener(ScanListener);
+        BasketStateHandler = new BasketTurnStile();
 
     }
     public static void main(String[] args){
@@ -89,5 +92,9 @@ public class MainGUI extends JFrame {
         Total = total;
 
         totalLabel.setText("£" + String.format("%.2f",Total));
+    }
+
+    public BasketTurnStile getBasketStateHandler() {
+        return BasketStateHandler;
     }
 }
